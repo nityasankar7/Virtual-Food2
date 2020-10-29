@@ -16,7 +16,7 @@ function setup() {
   dog1 = createSprite(300,300);
   dog1.addImage("dog",dog);
   dog1.scale=0.2;
-  foodObj= new Food(100,100,20,20);
+  foodObj= new Food1(100,100,20,20);
 
   foodStock=database.ref('Food');
   foodStock.on("value",readStock)
