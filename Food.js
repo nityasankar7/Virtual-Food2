@@ -1,9 +1,28 @@
-class Food{
+class Food1{
 constructor(){
-  var foodStock,lastFed
+  var foodStock,lastFed;
  // this.body = Bodies.rectangle(x, y,width,height);
  // World.add(world, this.body);
   this.image = loadImage("Milk.png")
+}
+getFoodStock(){
+  var getFoodStock= database.ref('foodStock')
+    getFoodStock.on("value",function(data){
+     foodStock= data.val();
+  })
+}
+
+ updateFoodStock(foodStock){
+  database.ref('/').update({
+  foodStock: Food
+  });
+}
+
+deductFood(lastFed){
+  var lastFed = "Food" + foodStock;
+  database.ref(lastFed).set({
+      Food: Food
+  })
 }
 display() {
   var x=80,y=100; 
